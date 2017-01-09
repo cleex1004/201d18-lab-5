@@ -54,20 +54,18 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sumAndMultiply(a,b,c){ //eslint-disable-line
   var sumAB = sum(a,b);
-  //console.log(sumAB);
+  //smarter way var add = sum(a,sum(b,c)[0])[0];
   var sumABC = sum(sumAB[0],c);
-  //console.log(sumABC);
   var multiplyAB = multiply(a,b);
-  //console.log(multiplyAB);
+  //smarter way var mult = mutiply(a,multiply(b,c)[0])[0];
   var multiplyABC = multiply(multiplyAB[0],c);
-  //console.log(multiplyABC);
   var messageSum = a + ' and ' + b + ' and ' + c + ' sum to ' + sumABC[0] + '.';
+  // var message1= a + ' and ' + b + ' and ' + c + ' sum to ' + add + '.';
   //console.log(messageSum);
   var messageMultiply = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + multiplyABC[0] + '.';
-  //console.log(messageMultiply);
-  //console.log(sumABC[0]);
-  //console.log(multiplyABC[0]);
+// var message 2= 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + mult + '.';
   return [sumABC[0], multiplyABC[0], messageSum, messageMultiply];
+  //return [add, mult, message1, message2];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -95,14 +93,10 @@ function sumArray(testArray){ //eslint-disable-line
     console.log(addTest[0]);
     testArray[0] = addTest[0];
     count ++;
-  }//console.log(number);
-  console.log(index);
-  return [start + ]
-  for (var indey = 0; indey < (testArray.length); indey++ {
-  return [start + ',' + testArray[1] + ',' + testArray[2] + ' was passed in as an array of numbers, and ' + addTest[0] + ' is their sum.'];
   }
+  console.log (start, testArray.join(',') + ' was passed in as an array of numbers, and ' + addTest[0] + ' is their sum.');
+  return [start, testArray.join(',') + 'was passed in as an array of numbers, and ' + addTest[0] + ' is their sum.'];
 }
-
 
 // Here is the test for sumArray(); uncomment it to run it
 
@@ -122,7 +116,12 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(testArray){ //eslint-disable-line
-
+  var mult = 1;
+  for (var index = 0; index < testArray.length; index++) {
+    mult = multiply(mult,testArray[index]);
+    mult = mult[0];
+  }
+  return [mult, 'The numbers ' + testArray.join(',') + ' have a product of ' + mult + '.'];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
