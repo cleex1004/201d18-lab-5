@@ -97,8 +97,12 @@ function sumArray(testArray){ //eslint-disable-line
     count ++;
   }//console.log(number);
   console.log(index);
-  return [addTest[0], start + ',' + testArray[1] + ',' + testArray[2] + ' was passed in as an array of numbers, and ' + addTest[0] + ' is their sum.'];
+  return [start + ]
+  for (var indey = 0; indey < (testArray.length); indey++ {
+  return [start + ',' + testArray[1] + ',' + testArray[2] + ' was passed in as an array of numbers, and ' + addTest[0] + ' is their sum.'];
+  }
 }
+
 
 // Here is the test for sumArray(); uncomment it to run it
 
